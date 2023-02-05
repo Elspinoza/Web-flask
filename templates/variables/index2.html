@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable</title>
+</head>
+<body>
+    <h3>Hello Variable</h3>
+    <p>{{my_value}}</p>
+    <p>{{my_users["Ema"]}}</p>
+    <table>
+        <thead>
+            <tr>
+                <th class="row">Index</th>
+                <th class="row">Nom</th>
+                <th class="row">Ville</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for nom, ville in my_users.items() %} 
+             
+            <tr>
+                <td>{{loop.index}}</td>
+                <td class= "{{'even' if loop.index % 2 == 0 else 'odd'}}">{{nom}}</td>
+                <td>{{ville}}</td><br>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
